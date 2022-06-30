@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="page-banner overlay-dark bg-image" style="background-image: url(/static/img/3987782.jpg);">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+           <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'login' %}">Login</a></li
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">Login</h1>
+          <h2>You have been logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Log In Again</a>
+        </small>
+    </div>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+
+
+{% endblock content %}
+

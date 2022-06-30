@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+  <div class="page-banner overlay-dark bg-image" style="background-image: url(/static/img/bg_image_1.jpg);">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Donors</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">{{donors.user.first_name}} {{donors.user.last_name}} Details</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section bg-light">
+    <div class="container">
+      <h3>{{donor.user.first_name}}  {{donor.user.last_name}}</h3>
+
+      <div class="row">
+        <div class="col-md-4">
+            <img src="{{ donor.user.profile.image.url}}" alt="" class="img-fluid" width="400">
+        </div>
+        <div class="col-md-8">
+
+            <h5>Blood Group: {{donor.blood_group}}</h5>
+            <h5>Genotype: {{donor.genotype}}</h5>
+            <hr>
+            <p class="text-info">Address: {{donor.address}}</p>
+            <p class="text-info">City: {{donor.city}}</p>
+            <p class="text-info">State: {{donor.state}} || ZipCode: {{donor.zipcode}} </p>
+            <p class="text-info">Phone number:{{donor.phone_number}}</p>
+            <p class="text-info">Sex: {{donor.sex}}</p>
+            <p class="text-info">Date of Birth: {{donor.date_of_birth}}</p>
+            <p class="btn btn-danger">Will Donate: {{donor.will_donate}}</p>
+            <hr>
+
+        </div>
+
+      </div>
+
+
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+{% endblock content %}
+{% block bottom %}{% endblock bottom %}

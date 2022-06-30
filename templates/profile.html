@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="page-banner overlay-dark bg-image" style="background-image: url(/static/img/3987782.jpg);">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="#">Search Donors</a></li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">Welcome to Your Profile {{ user.first_name }}</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+ <div class="page-section">
+    <div class="container">
+
+  <div class="contact-form mt-5">
+         <div class="media">
+        <img class="rounded-circle account-img" src="{{ profile.image.url }}">
+      </div>
+        <div class="row mb-3">
+
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-8 py-2 wow">
+            <label>Full Name: </label> {{ user.first_name }} {{ user.last_name }}
+          </div>
+          <div class="col-sm-6 py-2 wow">
+            <label>Email: </label> {{ user.email }}
+          </div>
+          <div class="col-6 py-2 wow ">
+            <label>Mobile Number: </label> {{ profile.donor.phone_number }}
+          </div>
+          <div class="col-8 py-2 wow ">
+            <label>Address: </label> {{ user.donor.address }}
+          </div>
+          <div class="col-4 py-2 wow ">
+            <label>City: </label> {{ user.donor.city }}
+          </div>
+          <div class="col-4 py-2 wow ">
+            <label>State: </label> {{ user.donor.state }}
+          </div>
+          <div class="col-4 py-2 wow ">
+            <label>Country: </label> {{ user.donor.country }}
+          </div>
+          <div class="col-4 py-2 wow ">
+            <label>ZipCode: </label> {{ user.donor.zipcode }}
+          </div>
+
+          <div class="col-6 py-2 wow ">
+            <label>Date of Birth: {{ user.donor.date_of_birth }}</label>
+          </div>
+          <div class="col-4 py-2 wow ">
+              <label>Sex: </label> {{ user.donor.sex }}
+          </div>
+          <div class="col-4 py-2 wow ">
+              <label>Blood Group: </label> {{ user.donor.blood_group }}
+          </div>
+          <div class="col-4 py-2 wow ">
+              <label>Genotype: </label> {{ user.donor.genotype }}
+          </div>
+          <div class="col-4 py-2 wow ">
+              <label>Will You Donate? :</label> {{ user.donor.will_donate }}
+          </div>
+        </div>
+        <a href="{% url 'profile-update' %}" class="btn btn-primary wow">Update Profile</a>
+  </div>
+    </div>
+  </div>
+
+{% endblock content %}
+{% block bottom %}{% endblock bottom %}
